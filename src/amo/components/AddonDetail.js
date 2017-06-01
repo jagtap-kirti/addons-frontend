@@ -1,5 +1,6 @@
 /* eslint-disable react/no-danger */
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
@@ -175,8 +176,7 @@ export class AddonDetailBase extends React.Component {
     const description = addon.description ? addon.description : addon.summary;
     const descriptionSanitized = sanitizeHTML(
       nl2br(description), allowedDescriptionTags);
-    const summarySanitized = sanitizeHTML(
-      addon.summary, ['a']);
+    const summarySanitized = sanitizeHTML(addon.summary, ['a']);
     const title = i18n.sprintf(
       // L10n: Example: The Add-On <span>by The Author</span>
       i18n.gettext('%(addonName)s %(startSpan)sby %(authorList)s%(endSpan)s'), {
