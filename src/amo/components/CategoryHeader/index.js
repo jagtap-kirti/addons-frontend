@@ -7,7 +7,6 @@ import { ADDON_TYPE_EXTENSION, ADDON_TYPE_THEME } from 'core/constants';
 import translate from 'core/i18n/translate';
 import { getCategoryColor } from 'core/utils';
 import Card from 'ui/components/Card';
-import Icon from 'ui/components/Icon';
 import LoadingText from 'ui/components/LoadingText';
 
 import './styles.scss';
@@ -24,7 +23,6 @@ export class CategoryHeaderBase extends React.Component {
 
     const addonType = category && category.type ? category.type : null;
     const color = getCategoryColor(category);
-    const iconName = category ? `category-${category.slug}` : null;
 
     // This is here until
     // https://github.com/mozilla/addons-server/issues/5728
@@ -56,7 +54,6 @@ export class CategoryHeaderBase extends React.Component {
         })}
       >
         <div className="CategoryHeader-wrapper">
-          <Icon className="CategoryHeader-icon" name={iconName} />
           <div className="CategoryHeader-contents">
             <h1 className="CategoryHeader-name">
               {category ? category.name : <LoadingText />}

@@ -28,26 +28,6 @@
   justify-content: center;
 }
 
-.CategoryHeader-icon {
-  display: none;
-
-  @include respond-to(medium) {
-    @include margin-start(32px);
-    @include margin-end(10px);
-
-    display: block;
-    height: 64px;
-    width: 64px;
-  }
-
-  @include respond-to(large) {
-    @include margin-start(48px);
-
-    height: 84px;
-    width: 84px;
-  }
-}
-
 .CategoryHeader-contents {
   align-self: center;
 
